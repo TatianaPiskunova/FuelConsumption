@@ -1,0 +1,56 @@
+﻿@model DetailedCatalogCarInfo
+@{
+    ViewData["Title"] = "Водители на автомобиле";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        th, td {
+            text-align: center !important;
+        }
+    </style>
+</head>
+<div class="container">
+    <h3>Гос.номер авто <span>@Model.Number</span></h3>
+    <div class="row">
+        <table class="table table-sm table-striped">
+            <caption>Список водителей на автомобиле</caption>
+
+            <thead>
+                <tr>
+                    <th>Водители</th>
+                    <th>Номер телефона</th>
+                    <th>Номер вахты</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                          
+                @foreach (var driver in Model.Drivers)
+                {
+                   
+                    <tr>
+                            <td>@driver.FullName</td>
+                            <td>@driver.PhoneNumber</td>
+                            <td>@driver.DriverWatch</td>
+                                                
+                    </tr>
+                }
+            
+            </tbody>
+        </table>
+        <div class="row m-2">
+            <div class="col d-grid">
+                <form asp-controller="Car" asp-action="AddDriverCar" method="get">
+                    <input readonly hidden name="id" value="@Model.Id" />
+                    <input type="submit" value="Добавить водителя" class="btn btn-primary" style="width:200px" />
+                </form>
+            </div>
+            <div class="col d-grid">
+                <a asp-controller="Car" asp-action="Index" class="btn btn-primary">Назад</a>
+            </div>
+          
+        </div>
+
+    </div>
+</div>

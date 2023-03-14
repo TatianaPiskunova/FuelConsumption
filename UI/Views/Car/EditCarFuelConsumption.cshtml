@@ -1,0 +1,14 @@
+﻿@model EditCarFuelConsumptionViewModel
+
+<form asp-controller="Car" asp-action="EditCarFuelConsumption" method="post">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <input asp-for="Id" hidden readonly />
+    <div class="form-group">
+        <label asp-for="FuelConsumption">Расход топлива л/100 км</label>
+        <span asp-validation-for="FuelConsumption"></span>
+        <input asp-for="FuelConsumption" value="@Model.FuelConsumption" class="form-control" />
+    </div>
+    <input type="submit" class="btn btn-success m-2" value="Изменить" />
+</form>
+
+<a asp-controller="Car" asp-action="index" class="btn btn-primary m-2">Назад</a>

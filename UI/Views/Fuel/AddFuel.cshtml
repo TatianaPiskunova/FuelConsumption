@@ -1,0 +1,58 @@
+﻿@model AddFuelConsumptionViewModel
+@{
+    ViewData["Title"] = "Добавление расхода топлива";
+}
+<h2>Добавление расхода топлива в базу</h2>
+
+<form asp-controller="Fuel" asp-action="AddFuel">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Number">Номер машины</label>
+        <span asp-validation-for="Number"></span>
+        <input asp-for="Number" value="@Model.Number" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FuelConsumptionPlus">Приход топлива (заправка)</label>
+        <span asp-validation-for="FuelConsumptionPlus"></span>
+        <input asp-for="FuelConsumptionPlus" value="@Model.FuelConsumptionPlus" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FuelConsumptionMinus">Расход топлива</label>
+        <span asp-validation-for="FuelConsumptionMinus"></span>
+        <input asp-for="FuelConsumptionMinus" value="@Model.FuelConsumptionMinus" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Mounth">Месяц(например: январь)</label>
+        <span asp-validation-for="Mounth"></span>
+        <input asp-for="Mounth" value="@Model.Mounth" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Year">Год (например: 2022)</label>
+        <span asp-validation-for="Year"></span>
+        <input asp-for="Year" value="@Model.Year" class="form-control" />
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" asp-for="@Model.WatchNumber" type="radio" id="exampleRadios1" value="1">
+        <label class="form-check-label" for="exampleRadios1">
+            Первая вахта
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" asp-for="@Model.WatchNumber" type="radio" id="exampleRadios2" value="2">
+        <label class="form-check-label" for="exampleRadios2">
+            Вторая вахта
+        </label>
+    </div>
+    <div class="col d-grid">
+        <input type="submit" class="btn btn-primary m-2" value="Добавить" />
+    </div>
+
+</form>
+<div class="col d-grid">
+    <a asp-controller="Fuel" asp-action="Index" class="btn btn-primary m-2">Назад</a>
+</div>

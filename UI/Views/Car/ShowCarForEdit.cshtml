@@ -1,0 +1,126 @@
+﻿@model CarViewModel
+
+@{
+    ViewData["Title"] = "Автомобиль";
+}
+
+<h2>Информация об автомобиле</h2>
+
+
+<table class="table table-borderless">
+    <tr>
+        <td class="align-middle">Марка автомобиля</td>
+        <td class="align-middle">@Model.Name</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForName">
+                <a asp-controller="Car"
+                   asp-action="EditCarName"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForName"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="align-middle">Модель автомобиля</td>
+        <td class="align-middle">@Model.Model</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForModel">
+                <a asp-controller="Car"
+                   asp-action="EditCarModel"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForModel"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Гос.номер автомобиля</td>
+        <td class="align-middle">@Model.Number</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForNumber">
+                <a asp-controller="Car"
+                   asp-action="EditCarNumber"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForNumber"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Год выпуска автомобиля</td>
+        <td class="align-middle">@Model.YearProduct</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForYearProduct">
+                <a asp-controller="Car"
+                   asp-action="EditCarYearProduct"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForYearProduct"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Расход топлива л/100 км</td>
+        <td class="align-middle">@Model.FuelConsumption</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForFuelConsumption">
+                <a asp-controller="Car"
+                   asp-action="EditCarFuelConsumption"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForFuelConsumption"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class="col d-grid">
+    <a asp-controller="Car" asp-action="index" class="btn btn-primary">Назад</a>
+</div>

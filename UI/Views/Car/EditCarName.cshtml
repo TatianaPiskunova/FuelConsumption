@@ -1,0 +1,14 @@
+﻿@model EditCarNameViewModel
+
+<form asp-controller="Car" asp-action="EditCarName" method="post">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <input asp-for="Id" hidden readonly />
+    <div class="form-group">
+        <label asp-for="Name">Марка автомобиля</label>
+        <span asp-validation-for="Name"></span>
+        <input asp-for="Name" value="@Model.Name" class="form-control" />
+    </div>
+    <input type="submit" class="btn btn-success m-2" value="Изменить" />
+</form>
+
+<a asp-controller="Car" asp-action="index" class="btn btn-primary m-2">Назад</a>

@@ -1,0 +1,68 @@
+﻿
+@model List<CarViewModel>
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        th, td {
+            text-align: center !important;
+        }
+        
+    </style>
+</head>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-sm table-striped">
+            <caption>Список автомобилей</caption>
+            <thead> 
+                <tr>
+                    <th>Марка авто</th>
+                    <th>Модель</th>
+                    <th>Гос.номер</th>
+                    <th>Год выпуска</th>
+                    <th>Линейный расход топлива, л/100км</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var car in Model)
+               
+                {
+                  
+
+                    <tr>
+                        <td>@car.Name</td>
+                        <td>@car.Model</td>
+                        <td>@car.Number</td>
+                        <td>@car.YearProduct</td>
+                        <td>@car.FuelConsumption</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Car" asp-action="AddCar" class="btn btn-primary">Добавить автомобиль</a>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col d-grid">
+                 <a asp-controller="Car" asp-action="DeleteCar" class="btn btn-primary">Удалить автомобиль</a>
+             </div>
+        </div> 
+        
+        <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Car" asp-action="ShowCarDriver" class="btn btn-primary">Водители на автомобилe</a>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Car" asp-action="SeachCar" class="btn btn-primary">Поиск автомобиля по номеру</a>
+            </div>
+        </div>
+
+    </div>
+</div>

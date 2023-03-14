@@ -1,0 +1,70 @@
+﻿@model UserViewModel
+
+@{
+    ViewData["Title"] = "Добавление пользователя в базу";
+}
+
+<h2>Добавление пользователя в базу</h2>
+
+<form asp-controller="Admin" asp-action="AddUser">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="FullName">ФИО пользователя</label>
+        <span asp-validation-for="FullName"></span>
+        <input asp-for="FullName" value="@Model.FullName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PositionOffice">Должность</label>
+        <span asp-validation-for="PositionOffice"></span>
+        <input asp-for="PositionOffice" value="@Model.PositionOffice" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Номер телефона</label>
+        <span asp-validation-for="PhoneNumber"></span>
+        <input asp-for="PhoneNumber" value="@Model.PhoneNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserName">Логин для пользователя</label>
+        <span asp-validation-for="UserName"></span>
+        <input asp-for="UserName" value="@Model.UserName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password">Пароль для пользователя. </label>
+        <span asp-validation-for="Password"></span>
+        <span>Должен включать цифры, латинские буквы, спецсимволы, заглавные буквы</span>
+        <input asp-for="Password" value="@Model.Password" class="form-control" />
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" asp-for="@Model.NameRole" type="radio" id="exampleRadios1" value="BossCar">
+        <label class="form-check-label" for="exampleRadios1">
+            Начальник гаража
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" asp-for="@Model.NameRole" type="radio" id="exampleRadios2" value="BossDriver">
+        <label class="form-check-label" for="exampleRadios2">
+            Отдел кадров
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" asp-for="@Model.NameRole" type="radio" id="exampleRadios3" value="Engineer">
+        <label class="form-check-label" for="exampleRadios3">
+            Инженер
+        </label>
+    </div>
+   
+    <div class="col d-grid">
+        <input type="submit" class="btn btn-primary m-2" value="Добавить" />
+    </div>
+</form>
+<div class="col d-grid">
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-primary m-2">Назад</a>
+</div>
+

@@ -1,0 +1,48 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Вход";
+}
+<head>
+    
+    <style>
+       form{
+           background-color:lightskyblue;
+       }
+       
+    </style>
+</head>
+
+
+<div class="text-center pt-5">
+    <h1 class="display-4">--- Вход в систему ---</h1>
+    <div class="container">
+        <form asp-controller="Home" asp-action="Index" class="p-3">
+            <div class="row m-2 mt-3">
+                <div class="col-3">
+                    <label asp-for="UserName" class="col-form-label">Логин</label>
+                </div>
+                <div class="col-9  d-grid">
+                    <input asp-for="UserName" value="@Model.UserName" class="form-control">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <label asp-for="Password" class="col-form-label">Пароль</label>
+                </div>
+                <div class="col-9 d-grid">
+                    <input asp-for="Password" value="@Model.Password" class="form-control">
+                </div>
+            </div>
+            <span asp-validation-for="UserName"></span>
+            <span asp-validation-for="Password"></span>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div class="row m-2 mt-3">
+                <div class="col d-grid">
+                    <input type="submit" class="btn btn-primary" value="Войти" />
+                </div>
+            </div>
+         
+        </form>
+    </div>
+</div>

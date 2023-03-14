@@ -1,0 +1,83 @@
+﻿@model DriverViewModel
+
+@{
+    ViewData["Title"] = "Водитель";
+}
+
+<h2>Информация о водителе</h2>
+
+
+<table class="table table-borderless">
+    <tr>
+        <td class="align-middle">ФИО водителя</td>
+        <td class="align-middle">@Model.FullName</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForFullName">
+                <a asp-controller="Driver"
+                   asp-action="EditDriverFullName"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForFullName"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="align-middle">Адрес проживания</td>
+        <td class="align-middle">@Model.Adress</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForAdress">
+                <a asp-controller="Driver"
+                   asp-action="EditDriverAdress"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForAdress"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Номер телефона</td>
+        <td class="align-middle">@Model.PhoneNumber</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForPhoneNumber">
+                <a asp-controller="Driver"
+                   asp-action="EditDriverPhoneNumber"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForPhoneNumber"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+   
+</table>
+
+<div class="col d-grid">
+    <a asp-controller="Driver" asp-action="index" class="btn btn-primary">Назад</a>
+</div>

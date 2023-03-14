@@ -1,0 +1,18 @@
+﻿@model ShowCarDriverViewModel
+
+@{
+    ViewData["Title"] = "Поиск автомобиля";
+}
+<h2>Поиск автомобиля</h2>
+
+<form asp-controller="Car" asp-action="ShowCarDriver" method="post">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Number">Гос.номер</label>
+        <span asp-validation-for="Number"></span>
+        <input asp-for="Number" value="@Model.Number" class="form-control" />
+    </div>
+    <input type="submit" class="btn btn-success m-2" value="Поиск" />
+</form>
+
+<a asp-controller="Car" asp-action="Index" class="btn btn-primary m-2">Назад</a>

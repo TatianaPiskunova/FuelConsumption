@@ -1,0 +1,46 @@
+﻿@model CarViewModel
+
+@{
+    ViewData["Title"] = "Добавление автомобиля в базу";
+}
+
+<h2>Добавление автомобиля в базу</h2>
+<form asp-controller="Car" asp-action="AddCar">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Name">Марка автомобиля</label>
+        <span asp-validation-for="Name"></span>
+        <input asp-for="Name" value="@Model.Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Model">Модель автомобиля</label>
+        <span asp-validation-for="Model"></span>
+        <input asp-for="Model" value="@Model.Model" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Number">Гос.номер автомобиля</label>
+        <span asp-validation-for="Number"></span>
+        <input asp-for="Number" value="@Model.Number" class="form-control" />
+    </div>
+
+     <div class="form-group">
+        <label asp-for="YearProduct">Год выпуска</label>
+        <span asp-validation-for="YearProduct"></span>
+        <input asp-for="YearProduct" value="@Model.YearProduct" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FuelConsumption">Линейный расход топлива, л/100км</label>
+        <span asp-validation-for="FuelConsumption"></span>
+        <input asp-for="FuelConsumption" value="@Model.FuelConsumption" class="form-control" />
+    </div>
+    <div class="col d-grid">
+        <input type="submit" class="btn btn-primary m-2" value="Добавить" />
+    </div>
+</form>
+<div class="col d-grid">
+    <a asp-controller="Car" asp-action="Index" class="btn btn-primary m-2">Назад</a>
+</div>
+

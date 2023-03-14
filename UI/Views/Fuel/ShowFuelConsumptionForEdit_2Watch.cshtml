@@ -1,0 +1,136 @@
+﻿@model FuelConsumption_2WatchViewModel
+
+@{
+    ViewData["Title"] = "Расход топлива на 2 вахту";
+}
+
+<h2>Информация о расходе топлива на 2 вахту</h2>
+
+
+<table class="table table-borderless">
+    <tr>
+        <td class="align-middle">Номер автомобиля</td>
+        <td class="align-middle">@Model.CarNumber</td>
+        <td class="align-middle">
+
+        </td>
+    </tr>
+
+    <tr>
+        <td class="align-middle">ФИО водителя</td>
+        <td class="align-middle">@Model.DriverFullName</td>
+        <td class="align-middle">
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Вахта</td>
+        <td class="align-middle">@Model.WatchNumber</td>
+        <td class="align-middle">
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Месяц</td>
+        <td class="align-middle">@Model.Mounth</td>
+        <td class="align-middle">
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Год</td>
+        <td class="align-middle">@Model.Year</td>
+        <td class="align-middle">
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Остаток топлива на начало вахты</td>
+        <td class="align-middle">@Model.EqualFuelConsumptionFirst_2Watch</td>
+        <td class="align-middle">
+
+            @*  <div id="editPlaceForPhoneNumber">
+                <a asp-controller="Driver"
+                   asp-action="EditDriverPhoneNumber"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForPhoneNumber"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>*@
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Приход топлива (заправка)</td>
+        <td class="align-middle">@Model.FuelConsumptionPlus_2Watch</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForPlusFuel">
+                <a asp-controller="Fuel"
+                   asp-action="EditPlusFuel_2Watch"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForPlusFuel"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Расход топлива</td>
+        <td class="align-middle">@Model.FuelConsumptionMinus_2Watch</td>
+        <td class="align-middle">
+
+            <div id="editPlaceForMinusFuel">
+                <a asp-controller="Fuel"
+                   asp-action="EditMinusFuel_2Watch"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlaceForMinusFuel"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="align-middle">Остаток топлива на конец вахты</td>
+        <td class="align-middle">@Model.EqualFuelConsumptionLast_2Watch</td>
+        <td class="align-middle">
+             <div id="editPlace">
+                <a asp-controller="Fuel"
+                   asp-action="UpdateFuel_2Watch"
+                   class="btn btn-primary" style="width:200px"
+                   data-ajax="true"
+                   data-ajax-update="#editPlace"
+                   data-ajax-mode="replace"
+                   data-ajax-method="get"
+                   asp-route-id="@Model.Id">
+                    Изменить
+                </a>
+
+
+
+            </div>
+          
+        </td>
+    </tr>
+
+</table>
+
+<div class="col d-grid">
+    <a asp-controller="Fuel" asp-action="index" class="btn btn-primary">Назад</a>
+</div>

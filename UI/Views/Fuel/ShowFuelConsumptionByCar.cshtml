@@ -1,0 +1,91 @@
+﻿@model List<EqualFuelConsumptionViewModel>
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        th, td {
+            text-align: center !important;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-sm table-striped">
+            <caption>Расход топлива</caption>
+            <thead>
+                <tr>
+                    <th>Гос. номер машины</th>
+                    <th>Месяц</th>
+                    <th>Год</th>
+                    <th>ФИО водителя</th>
+                    <th>Номер вахты</th>
+                    <th>Остаток на начало 1 вахты</th>
+                    <th>Заправка за 1 вахту</th>
+                    <th>Расход за 1 вахту</th>
+                    <th>Остаток на конец 1 вахты</th>
+                    <th>Остаток на начало 2 вахты</th>
+                    <th>Заправка за 2 вахту</th>
+                    <th>Расход за 2 вахту</th>
+                    <th>Остаток на конец 2 вахты</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var fuel in Model)
+                {
+                    <tr>
+                        <td>@fuel.CarNumber</td>
+                        <td>@fuel.Mounth</td>
+                        <td>@fuel.Year</td>
+                        <td>@fuel.DriverFullName</td>
+                        <td>@fuel.WatchNumber</td>
+                        <td>@fuel.EqualFuelConsumptionFirst_1Watch</td>
+                        <td>@fuel.FuelConsumptionPlus_1Watch</td>
+                        <td>@fuel.FuelConsumptionMinus_1Watch</td>
+                        <td>@fuel.EqualFuelConsumptionLast_1Watch</td>
+                        <td>@fuel.EqualFuelConsumptionFirst_2Watch</td>
+                        <td>@fuel.FuelConsumptionPlus_2Watch</td>
+                        <td>@fuel.FuelConsumptionMinus_2Watch</td>
+                        <td>@fuel.EqualFuelConsumptionLast_2Watch</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+        @*<div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Fuel" asp-action="AddFuel" class="btn btn-primary m-2">Добавить данные</a>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Fuel" asp-action="AddFuelJanuary" class="btn btn-primary m-2">Добавить данные на январь месяц</a>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Fuel" asp-action="SearchFuel" class="btn btn-primary m-2">Поиск топлива по автомобилю</a>
+            </div>
+        </div>
+      
+        <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Fuel" asp-action="DeleteFuel" class="btn btn-primary m-2">Удалить данные</a>
+            </div>
+        </div>
+*@
+     @*   <div class="row m-2">
+            <div class="col d-grid">
+                <a asp-controller="Fuel" asp-action="UpdateFuel" class="btn btn-primary m-2">Пересчитать расход топлива по автомобилю</a>
+            </div>
+        </div>*@
+      
+   @*     </div>*@
+        <div class="col d-grid">
+            <a asp-controller="Fuel" asp-action="Index" class="btn btn-primary m-2">Назад</a>
+        </div>
+    </div>
+</div>

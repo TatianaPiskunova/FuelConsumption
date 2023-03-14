@@ -1,0 +1,9 @@
+﻿@model UpdateFuel_1WatchViewModel
+
+<form asp-controller="Fuel" asp-action="UpdateFuel_1Watch" method="post">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <input asp-for="Id" hidden readonly />
+    <input type="submit" class="btn btn-success m-2" value="Пересчитать данные" />
+</form>
+
+<a asp-controller="Fuel" asp-action="index" class="btn btn-primary m-2">Назад</a>

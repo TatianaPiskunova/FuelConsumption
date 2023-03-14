@@ -1,0 +1,27 @@
+﻿@model CarDriverAddViewModel
+@{
+    ViewData["Title"] = "Добавить водителя на автомобиль";
+}
+
+<h2>Добавить водителя на автомобиль</h2>
+
+<form asp-controller="Car" asp-action="AddDriverCar" method="post">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <input asp-for="Id" hidden readonly />
+    <div class="form-group">
+        <label asp-for="FullName">ФИО водителя</label>
+        <span asp-validation-for="FullName"></span>
+        <input asp-for="FullName" value="@Model.FullName" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Watch">Номер вахты для работы водителя (1 или 2)</label>
+        <span asp-validation-for="Watch"></span>
+        <input asp-for="Watch" value="@Model.Watch" class="form-control" />
+
+    </div>
+    <input type="submit" class="btn btn-success m-2" value="Добавить" />
+</form>
+
+<a asp-controller="Car" asp-action="ShowDrivers" class="btn btn-primary m-2">Назад</a>
+
