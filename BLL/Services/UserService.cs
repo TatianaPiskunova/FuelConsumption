@@ -105,9 +105,23 @@ namespace BLL.Services
             var userDTO = _mapper.Map<User, UserDTO>(user);
             return userDTO;
         }
+        public void DeleteById(string id)
+        {
+            var user = _userManager.FindByIdAsync(id).Result;
+
+            if (user != null)
+            {
+                _userManager.DeleteAsync(user);
+            }
+        }
         public UserDTO FindByFullName(string fullName)
         {
             var user = _userManager.FindByNameAsync(fullName).Result;
+            return _mapper.Map<UserDTO>(user);
+        }
+        public UserDTO FindByUserName(string userName)
+        {
+            var user = _userManager.FindByNameAsync(userName).Result;
             return _mapper.Map<UserDTO>(user);
         }
         public async Task<bool> IsInRoleAsync(UserDTO uDTO, string role)

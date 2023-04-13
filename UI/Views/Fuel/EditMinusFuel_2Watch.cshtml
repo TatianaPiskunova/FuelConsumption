@@ -5,7 +5,7 @@
     <input asp-for="Id" hidden readonly />
     <div class="form-group">
         <label asp-for="FuelConsumptionMinus_2Watch">Расход за вторую вахту</label>
-        <span asp-validation-for=" FuelConsumptionMinus_2Watch"></span>
+        <span asp-validation-for=" FuelConsumptionMinus_2Watch" style="color:red;"></span>
         <input asp-for=" FuelConsumptionMinus_2Watch" value="@Model.FuelConsumptionMinus_2Watch" class="form-control" />
     </div>
     <input type="submit" class="btn btn-success m-2" value="Изменить" />

@@ -5,7 +5,7 @@
     <input asp-for="Id" hidden readonly />
     <div class="form-group">
         <label asp-for="Adress">ФИО водителя</label>
-        <span asp-validation-for="Adress"></span>
+        <span asp-validation-for="Adress" style="color:red;"></span>
         <input asp-for="Adress" value="@Model.Adress" class="form-control" />
     </div>
     <input type="submit" class="btn btn-success m-2" value="Изменить" />

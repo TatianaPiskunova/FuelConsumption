@@ -9,19 +9,19 @@
     <div class="validation" asp-validation-summary="ModelOnly"></div>
     <div class="form-group">
         <label asp-for="FullName">ФИО водителя</label>
-        <span asp-validation-for="FullName"></span>
+        <span asp-validation-for="FullName" style="color:red;"></span>
         <input asp-for="FullName" value="@Model.FullName" class="form-control" />
     </div>
 
     <div class="form-group">
         <label asp-for="Adress">Адрес проживания</label>
-        <span asp-validation-for="Adress"></span>
+        <span asp-validation-for="Adress" style="color:red;"></span>
         <input asp-for="Adress" value="@Model.Adress" class="form-control" />
     </div>
 
     <div class="form-group">
         <label asp-for="PhoneNumber">Номер телефона</label>
-        <span asp-validation-for="PhoneNumber"></span>
+        <span asp-validation-for="PhoneNumber" style="color:red;"></span>
         <input asp-for="PhoneNumber" value="@Model.PhoneNumber" class="form-control" />
     </div>
     

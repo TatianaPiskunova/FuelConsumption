@@ -15,7 +15,9 @@ namespace BLL.Interfaces
         Task<bool> Login(string name, string password);
         void Init();
         Task Logout();
+        void DeleteById(string id);
         UserDTO FindByFullName(string fullName);
+        UserDTO FindByUserName(string userName);
         UserDTO FindById(string id);
         Task Update(UserDTO user);
         Task<bool> IsInRoleAsync(UserDTO uDTO, string role);

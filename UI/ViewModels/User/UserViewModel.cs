@@ -6,20 +6,20 @@ namespace UI.ViewModels
     {
         public string? Id { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         public string FullName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         public string PositionOffice { get; set; }
 
-        //[Required]
-        //[DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
+        [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         public string UserName { get; set; } //логин
 
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 

@@ -5,7 +5,7 @@
     <input asp-for="Id" hidden readonly />
     <div class="form-group">
         <label asp-for="YearProduct">Год выпуска автомобиля</label>
-        <span asp-validation-for="YearProduct"></span>
+        <span asp-validation-for="YearProduct" style="color:red;"></span>
         <input asp-for="YearProduct" value="@Model.YearProduct" class="form-control" />
     </div>
     <input type="submit" class="btn btn-success m-2" value="Изменить" />

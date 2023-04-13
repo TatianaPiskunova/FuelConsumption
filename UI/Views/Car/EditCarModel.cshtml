@@ -5,7 +5,7 @@
     <input asp-for="Id" hidden readonly />
     <div class="form-group">
         <label asp-for="Model">Модель автомобиля</label>
-        <span asp-validation-for="Model"></span>
+        <span asp-validation-for="Model" style="color:red;"></span>
         <input asp-for="Model" value="@Model.Model" class="form-control" />
     </div>
     <input type="submit" class="btn btn-success m-2" value="Изменить" />

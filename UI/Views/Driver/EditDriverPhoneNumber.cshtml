@@ -5,7 +5,7 @@
     <input asp-for="Id" hidden readonly />
     <div class="form-group">
         <label asp-for="PhoneNumber">Номер телефона водителя</label>
-        <span asp-validation-for="PhoneNumber"></span>
+        <span asp-validation-for="PhoneNumber" style="color:red;"></span>
         <input asp-for="PhoneNumber" value="@Model.PhoneNumber" class="form-control" />
     </div>
     <input type="submit" class="btn btn-success m-2" value="Изменить" />

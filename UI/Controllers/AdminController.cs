@@ -73,5 +73,35 @@ namespace UI.Controllers
             }
 
         }
+
+        [HttpGet]
+        public IActionResult DeleteUser()
+        {
+            var vm = new UserDeleteViewModel();
+
+            return View(vm);
+        }
+        [HttpPost]
+        public IActionResult DeleteUser(UserDeleteViewModel vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
+            var user = _userService.FindByUserName(vm.UserName);
+
+            if (user != null)
+            {
+
+
+               _userService.DeleteById(user.Id);
+                return RedirectToAction("Index");
+
+            }
+
+            return NotFound("Пользователь с таким логином не найден");
+
+
+        }
     }
 }

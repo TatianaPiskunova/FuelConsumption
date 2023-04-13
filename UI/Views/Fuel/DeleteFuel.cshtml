@@ -8,18 +8,18 @@
     <div class="validation" asp-validation-summary="ModelOnly"></div>
     <div class="form-group">
         <label asp-for="Number">Номер машины</label>
-        <span asp-validation-for="Number"></span>
+        <span asp-validation-for="Number" style="color:red;"></span>
         <input asp-for="Number" value="@Model.Number" class="form-control" />
     </div>
 
     <div class="form-group">
         <label asp-for="Mounth">Месяц(например: январь)</label>
-        <span asp-validation-for="Mounth"></span>
+        <span asp-validation-for="Mounth" style="color:red;"></span>
         <input asp-for="Mounth" value="@Model.Mounth" class="form-control" />
     </div>
     <div class="form-group">
         <label asp-for="Year">Год (например: 2022)</label>
-        <span asp-validation-for="Year"></span>
+        <span asp-validation-for="Year" style="color:red;"></span>
         <input asp-for="Year" value="@Model.Year" class="form-control" />
     </div>
 

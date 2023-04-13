@@ -4,7 +4,7 @@ namespace UI.ViewModels
 {
     public class CarDeleteViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         public string Number { get; set; }
     }
 }

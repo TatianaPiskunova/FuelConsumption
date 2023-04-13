@@ -5,13 +5,13 @@ namespace UI.ViewModels
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         public string FullName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         public string Adress { get; set; }
-               
-        [Required]
+
+        [Required(ErrorMessage = "Поле должно быть заполнено")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
     }

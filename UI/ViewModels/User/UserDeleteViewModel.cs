@@ -2,9 +2,9 @@
 
 namespace UI.ViewModels
 {
-    public class DriverDeleteViewModel
+    public class UserDeleteViewModel
     {
         [Required(ErrorMessage = "Поле должно быть заполнено")]
-        public string FullNumber { get; set; }
+        public string? UserName { get; set; }
     }
 }
